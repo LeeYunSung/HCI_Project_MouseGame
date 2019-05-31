@@ -16,6 +16,15 @@ public class wall : MonoBehaviour {
 
     const int CLEAR_SCORE = 5;
 
+    public GameObject Explosion;
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Instantiate(Explosion, transform.position, transform.rotation);
+        }
+    }
+
     // Use this for initialization
     void Start () {
 

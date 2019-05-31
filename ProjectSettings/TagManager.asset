@@ -8,6 +8,9 @@ TagManager:
   - door1
   - door2
   - GM
+  - goodItem
+  - badItem
+  - bedItem
   layers:
   - Default
   - TransparentFX
