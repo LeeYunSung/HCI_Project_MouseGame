@@ -2,30 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour {
+public class Item : MonoBehaviour
+{
+    public float speed = 2.0f; //아이템 속도
+    private float deadHeight = -15.0f; //y값이 -15.0 아래로 내려가면 화면에서 안보이는 거니까 없애기
 
-    public Player player_script;
-    public GameManager GM;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    void FixedUpdate()
+    void Start()
     {
-        int r = Random.Range(-1, 2);
-        transform.position = new Vector3(transform.position.x + r/100, transform.position.y - 0.02f, transform.position.z);
 
-        if (transform.position.y <= -20f)
+    }
+
+    //계속 아래로 이동
+    void Update()
+    {
+        transform.Translate(Vector3.down * speed * Time.deltaTime);
+        if(transform.position.y < deadHeight)
         {
             Destroy(gameObject);
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag.Equals("Player"))
+        {
+            //hp를 더한다
+            Destroy(gameObject);
+        }
+    }
 }

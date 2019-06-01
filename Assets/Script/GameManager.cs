@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour {
     public GameObject Wall;
 
     public GameObject waterFlow;
-    //public GameObject GameStartObj;
     public GameObject GameOverObj;
     public GameObject GameClearObj;
 

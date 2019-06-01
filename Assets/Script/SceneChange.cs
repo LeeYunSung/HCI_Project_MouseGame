@@ -24,7 +24,7 @@ public class SceneChange : MonoBehaviour
 
     public void howGame()
     {
-        SceneManager.LoadScene("1.main");
+        //SceneManager.LoadScene("1.main");
 
     }
     public void goMain()

@@ -1066,6 +1066,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canObject: {fileID: 1437163246995143722, guid: 70a2a3f1a8714084ea092a03dde2720d,
     type: 3}
+  woodObject: {fileID: 0}
+  cheeseObject: {fileID: 5611698387116742869, guid: e6420f686473d434597c64bd94bb6f9a,
+    type: 3}
+  hamObject: {fileID: 0}
 --- !u!4 &908840946
 Transform:
   m_ObjectHideFlags: 0
