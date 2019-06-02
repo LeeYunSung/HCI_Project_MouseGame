@@ -17,9 +17,34 @@ public class wall3 : MonoBehaviour
     int answer2 = 0;
 
     const int CLEAR_SCORE = 1500;
-    const int CLEAR_LEVEL = 4;
+
+    ArrayList questionList;
+    ArrayList answerList;
 
     public GameObject Explosion;
+
+    int num;
+    string[] q = new string[]
+    {
+        "달팽이도 이빨이 있다.",
+        "원숭이에게도 지문이 있다.",
+        "벼룩도 간이 있다.",
+        "비행기 블랙박스는 검은색",
+        "대머리도 비듬이 있다.",
+        "물고기도 색을 구분한다.",
+        "낙지는 심장이 3개이다.",
+        "세계에서 가장 긴 강은 황허강",
+        "고래는 냄새를 맡을 수 있다.",
+        "소는 색맹이다."
+
+    };
+
+
+    int[] ans = new int[] // o면 1, x면 2
+    {
+        1, 1, 2, 2, 1, 1, 1, 2, 1, 1
+    };
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -40,66 +65,31 @@ public class wall3 : MonoBehaviour
         AnswerText1 = transform.GetChild(1).gameObject.GetComponent<Text>();
         AnswerText2 = transform.GetChild(2).gameObject.GetComponent<Text>();
 
-        int a = Random.Range(10, 50);//숫자 1
-        int b = Random.Range(10, 50);//숫자 2
-        int op = Random.Range(0, 3);//+ or - or *
+        // 글자 크기 줄임
+        AnswerText1.fontSize = 30;
+        AnswerText2.fontSize = 30;
+        quizText.fontSize = 30;
 
-        //문제의 경우에 따라
-        switch (op)
-        {
-            //+문제
-            case 0:
-                answer1 = a + b;
-                answer2 = Random.Range(20, 100);
-                if (answer2 == answer1)
-                {
-                    answer2 = Random.Range(20, 100);
-                }
-                quizText.text = a.ToString() + " + " + b.ToString() + " = ?";
-                break;
-            //-문제
-            case 1:
-                answer1 = a - b;
-                answer2 = Random.Range(-40, 40);
-                if (answer2 == answer1)
-                {
-                    answer2 = Random.Range(-40, 40);
-                }
-                quizText.text = a.ToString() + " - " + b.ToString() + " = ?";
-                break;
-            //*문제
-            case 2:
-                answer1 = a * b;
-                answer2 = Random.Range(100, 2500);
-                if (answer2 == answer1)
-                {
-                    answer2 = Random.Range(100, 2500);
-                }
-                quizText.text = a.ToString() + " x " + b.ToString() + " = ?";
-                break;
-        }
-        //답 위치를 랜덤으로 배치
-        int rand = Random.Range(0, 2);
-        if (rand == 0)
-        {
-            AnswerText1.text = answer1.ToString();
-            AnswerText2.text = answer2.ToString();
-        }
-        else
-        {
-            AnswerText2.text = answer1.ToString();
-            AnswerText1.text = answer2.ToString();
-        }
+        questionList = new ArrayList();
+        answerList = new ArrayList();
+
+        questionList.AddRange(q);
+        answerList.AddRange(ans);
+
+        // 문제 출제
+        num = Random.Range(0, 10);
+        quizText.text = questionList[num].ToString();
+        AnswerText1.text = "O";
+        AnswerText2.text = "X";
     }
 
     void Update()
     {
-
     }
 
     void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y - 0.05f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y - 0.08f, transform.position.z);
 
         if (transform.position.y <= -10f)
         {
@@ -115,12 +105,13 @@ public class wall3 : MonoBehaviour
             //왼쪽으로 통과했을 때
             if (player_script.movePoint == 0)
             {
-                if (System.Convert.ToInt32(AnswerText1.text) == answer1)
+                if (ans[num] == 1)
                 {
+                    // 정답
                     global.gScore += 100;
-                    global.gLevel++;
-                    if (global.gLevel == CLEAR_LEVEL && global.gScore == CLEAR_SCORE)
+                    if (global.gScore == CLEAR_SCORE)
                     {
+                        global.gLevel++;
                         GM.isGameClear = true;
                     }
                 }
@@ -132,12 +123,13 @@ public class wall3 : MonoBehaviour
             //오른쪽으로 통과했을 때
             else if (player_script.movePoint == 2)
             {
-                if (System.Convert.ToInt32(AnswerText2.text) == answer1)
+                if (ans[num] == 2)
                 {
+                    // 정답
                     global.gScore += 100;
-                    global.gLevel++;
-                    if (global.gLevel == CLEAR_LEVEL && global.gScore == CLEAR_SCORE)
+                    if (global.gScore == CLEAR_SCORE)
                     {
+                        global.gLevel++;
                         GM.isGameClear = true;
                     }
                 }

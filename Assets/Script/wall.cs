@@ -16,7 +16,6 @@ public class wall : MonoBehaviour {
     int answer2 = 0;
 
     const int CLEAR_SCORE = 500;
-    const int CLEAR_LEVEL = 4;
 
     public GameObject Explosion;
     void OnTriggerEnter(Collider other)
