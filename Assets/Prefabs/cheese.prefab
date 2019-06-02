@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 508139512027203160}
   m_Layer: 0
   m_Name: cheese
-  m_TagString: Untagged
+  m_TagString: goodItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5611698387116742869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.134, y: 2.134, z: 0}
+  m_LocalPosition: {x: -1.304961, y: 5.772731, z: 0}
   m_LocalScale: {x: 0.166584, y: 0.166584, z: 0.166584}
   m_Children: []
   m_Father: {fileID: 0}
@@ -142,3 +142,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  GM: {fileID: 0}
+  global: {fileID: 0}

@@ -11,6 +11,7 @@ TagManager:
   - goodItem
   - badItem
   - bedItem
+  - global
   layers:
   - Default
   - TransparentFX

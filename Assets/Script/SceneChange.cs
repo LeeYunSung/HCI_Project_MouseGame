@@ -19,7 +19,7 @@ public class SceneChange : MonoBehaviour
     }
     public void startGame()
     {
-        SceneManager.LoadScene("2.game");
+        SceneManager.LoadScene("2.game1");
     }
 
     public void howGame()

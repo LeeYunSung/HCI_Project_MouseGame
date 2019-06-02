@@ -62,14 +62,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\SceneChange.cs" />
-    <Compile Include="Assets\Script\GameLevelManager.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\GlobalVariable.cs" />
     <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\ItemObjects.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\SceneChange.cs" />
     <Compile Include="Assets\Script\wall.cs" />
+    <Compile Include="Assets\Script\wall2.cs" />
+    <Compile Include="Assets\Script\wall3.cs" />
     <Compile Include="Assets\Script\water.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/dldbs/Documents/mouse/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -95,11 +96,17 @@
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
       <HintPath>C:/Users/dldbs/Documents/mouse/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
+    <Reference Include="Editor">
+      <HintPath>C:/Users/dldbs/Documents/mouse/Library/ScriptAssemblies/Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
       <HintPath>C:/Users/dldbs/Documents/mouse/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Users/dldbs/Documents/mouse/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="XiaomiSupport">
+      <HintPath>C:/Users/dldbs/Documents/mouse/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/dldbs/Documents/mouse/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
@@ -298,6 +305,12 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/dldbs/Documents/mouse/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="ChannelPurchase">
+      <HintPath>C:/Users/dldbs/Documents/mouse/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityStore">
+      <HintPath>C:/Users/dldbs/Documents/mouse/Library/PackageCache/com.unity.xiaomi@1.0.3/UnityStore.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
